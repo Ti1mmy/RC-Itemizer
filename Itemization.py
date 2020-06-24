@@ -16,11 +16,11 @@ BUGS:
     - Make sure to double-check gifts for any item with multiple variations per item ID (stained glass, clay, etc)
     - Gift Names with "&" as a part of their name (ie: Sweet&Sour Porkchop) may get messed up
 """
-COOLDOWN = 14400  # 4h
+COOLDOWN = "test"  # 4h
 SHOP_NAME = "itemizationShop"  # Rename to any string with no spaces. Will append index# for >1 page
 
 
-with open("Test Files/EventGifts.conf", "r", encoding="utf8") as File1:
+with open("Test Files/InputEventGifts.conf", "r", encoding="utf8") as File1:
     file_contents = File1.read().split(sep="\n")
 newlist = []
 newlistformal = []
@@ -108,13 +108,13 @@ for i in range((len(newlistformal) // 38) + 1):
             shop[i].append('        icon {')
             shop[i].append('            displayName=""')
             shop[i].append('            itemType="STAINED_GLASS_PANE"')
-            shop[i].append('			durability=14')
+            shop[i].append('			durability=0')
             shop[i].append('            lores=[')
             shop[i].append('                ""')
             shop[i].append('            ]')
             shop[i].append('        }')
             shop[i].append('    }')
-        shop[i].append('	"menu_title"="&6Itemization Shop!"')
+        shop[i].append('	"menu_title"="&cItemization Shop!"')
         shop[i].append('}')
     else:
         shop.append([f'{SHOP_NAME}{i}' + " {"])
@@ -149,13 +149,13 @@ for i in range((len(newlistformal) // 38) + 1):
             shop[i].append('        icon {')
             shop[i].append('            displayName=""')
             shop[i].append('            itemType="STAINED_GLASS_PANE"')
-            shop[i].append('			durability=14')
+            shop[i].append('			durability=0')
             shop[i].append('            lores=[')
             shop[i].append('                ""')
             shop[i].append('            ]')
             shop[i].append('        }')
             shop[i].append('    }')
-        shop[i].append('	"menu_title"="&6Itemization Shop!"')
+        shop[i].append('	"menu_title"="&cItemization Shop!"')
         shop[i].append('}')
 with open("output.conf", "a", encoding="utf-8") as output:
     for menu in shop:
