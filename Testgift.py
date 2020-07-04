@@ -4,11 +4,12 @@ with open("Test Files/menusPortingShopStacks.conf", "r", encoding="utf8") as Fil
     file_contents2 = File2.read().split(sep="\n")
 gifts = []
 for thing in file_contents:
-    if "cost=" in thing and thing.split(":")[1] not in gifts:
+    if ("cost=" in thing or "commodity=" in thing) and thing.split(":")[1] not in gifts and thing.split(":")[1] != "rcoin":
         gifts.append(thing.split(":")[1])
 for thing in file_contents2:
-    if "cost=" in thing and thing.split(":")[1] not in gifts:
+    if ("cost=" in thing or "commodity=" in thing) and thing.split(":")[1] not in gifts and thing.split(":")[1] != "rcoin":
         gifts.append(thing.split(":")[1])
+gifts.sort()
 for gift in gifts:
     if gift[-1] == '"':
         print(f'        {gift[:-1]} ' + "{")
