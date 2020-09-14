@@ -99,7 +99,7 @@ for i in range((len(newlistformal) // 38) + 1):
             shop[i].append('	}')
             index += 1
         for o in range(5):
-            shop[i].append(f'    "{38 + o}"' + "{")
+            shop[i].append(f'    "{38 + o}"' + " {")
             shop[i].append("        action {")
             shop[i].append('            permission="commands.use"')
             shop[i].append('            reward="COMMAND:."')
@@ -140,7 +140,7 @@ for i in range((len(newlistformal) // 38) + 1):
             shop[i].append('	}')
             index += 1
         for o in range(5):
-            shop[i].append(f'    "{index % 38 + o}"' + "{")
+            shop[i].append(f'    "{index % 38 + o}"' + " {")
             shop[i].append("        action {")
             shop[i].append('            permission="commands.use"')
             shop[i].append('            reward="COMMAND:."')
